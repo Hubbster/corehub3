@@ -1,0 +1,72 @@
+.activity-list
+  table
+    td
+      text-overflow: ellipsis
+      overflow: hidden
+      white-space: nowrap
+      position: relative
+
+    td.has-overflow
+      padding: 0
+      div
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
+        position: relative
+        padding: ($base-line-height / 2)
+
+    td.has-overflow:hover
+      white-space: initial
+      text-overflow: inherit
+      overflow: visible
+      div
+        z-index: 999
+        position: absolute
+        width: inherit
+        background-color: $uibasebg
+        top: 0
+        white-space: initial
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.19)
+        -moz-box-shadow:    0px 2px 4px 0px rgba(0, 0, 0, 0.19)
+        box-shadow:         0px 2px 4px 0px rgba(0, 0, 0, 0.19)
+    .status
+      width: 3.063rem
+
+    .responsible
+      width: 15%
+
+    .category
+      width: 15%
+
+    .goal
+      width: 35%
+
+    .description
+      width: 35%
+
+    .completed
+      background-color: #5CB85C
+      text-align: center
+      color: #ffffff
+
+    .active
+      background-color: yellow
+
+    .options
+      width: 3.063rem
+
+    .dropdown
+      background-color: darken($uibasebg, 10%)
+      cursor: pointer
+      span
+        display: block
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 8px 6px 0 6px
+        border-color: #000000 transparent transparent transparent
+        line-height: 0px
+        _border-color: #000000 #ffffff #ffffff #ffffff
+        _filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff')
+        margin-left: auto
+        margin-right: auto

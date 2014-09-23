@@ -1,0 +1,36 @@
+.jstree-default .jstree-search
+  font-style: normal
+  color: $customer-theme-color
+  font-weight: bold
+
+.user-tree
+  +clearfix
+  .top
+    +span(full)
+  .search
+    float: right
+    width: 250px
+  .tree-container
+    +clearfix
+    +span(full)
+    position: relative
+    border-top: 1px solid $base-border-color
+    border-bottom: 1px solid $base-border-color
+  .tree
+    min-height: 400px
+    overflow-y: auto
+  .settings-tree
+    position: absolute
+    left: 0
+    right: 250px
+    max-height: 450px
+  .data
+    position: absolute
+    width: 300px
+    height: 100%
+    padding: 1em
+    top: 0
+    right: 0
+    z-index: 2
+    background-color: $uibasebg
+    border: 1px solid $base-border-color

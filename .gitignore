@@ -1,0 +1,4 @@
+*.html
+.sass-cache/*
+views/test.jade
+public/sass/.sass-cache/*

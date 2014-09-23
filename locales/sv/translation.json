@@ -1,0 +1,18 @@
+{
+  "app": {
+    "name": "CoreHub"
+  },
+  "nav": {
+    "home": "Översikt",
+    "page1": "Sida 1",
+    "page2": "Sida 2"
+  },
+  "page": {
+    "dashboard": {
+      "name": "Översikt"
+    },
+    "system-settings": {
+      "name": "Systeminställningar"
+    }
+  }
+}

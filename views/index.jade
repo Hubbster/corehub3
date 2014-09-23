@@ -1,0 +1,273 @@
+block vars
+  - var bodyClass = 'dashboard'
+
+extend template/default 
+append main
+  .widget-holder
+    .top Aktivering i organisationen
+      button.modal-toggle Filtrera
+    .wrapper
+      .gauge#total-activation
+      .right
+        .gauge#accepted-ambassador-invite
+        .gauge#accepted-workshop-invite
+        .gauge#booked-workshop
+        .gauge#finished-tutoring
+        .gauge#filled-out-activity-list
+        .gauge#finished-activity
+    
+  .widget-holder
+    .top Aktiviteter
+    
+  .widget-holder
+    .top Handledning
+
+  .modal#modal-filter-business-area
+    .modal-inner
+      label.modal-close.modal-toggle(for='modal-1')
+      h1 Filter widget data
+      .user-tree
+        .top
+          input.search#filterTreeSearch(type='text', placeholder='Search department')
+        .tree-container
+          .tree.settings-tree#filterTree
+            ul
+              li(data-jstree='{"icon":"icon-home","opened":true,"selected":true}') Hubbster AB
+                ul
+                  li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  li(data-jstree='{"icon":"icon-office"}') UI/UX team
+                  li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  li(data-jstree='{"icon":"icon-office"}') UI/UX team
+            
+append scripts
+  script(src="/public/js/vendor/raphael.2.1.0.min.js")
+  script(src="/public/js/vendor/justgage.1.0.1.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.3/jstree.min.js")
+
+  script.
+    $(function () {
+        $('#filterTree').jstree({
+            "plugins": ["wholerow", "checkbox", "search", "sort", "dnd"],
+            "core" : {
+              "check_callback" : true,
+              "themes" : {
+                "variant" : "large",
+                "stripes" : true
+              }
+            },
+            "types" : {
+              "ambassador" : {
+                "icon" : "icon-user4"
+              },
+              "user" : {
+                "icon" : "icon-user"
+              }
+            }
+        });
+        var to = false;
+        $('#filterTreeSearch').keyup(function () {
+            if (to) {
+                clearTimeout(to);
+            }
+            to = setTimeout(function () {
+                var v = $('#filterTreeSearch').val();
+                $('#filterTree').jstree(true).search(v);
+            }, 250);
+        });
+    });
+    
+  script.
+    var totalActivation = new JustGage({
+      id: "total-activation",
+
+      relativeGaugeSize: true,
+      startAnimationTime: 2500,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Total activation",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var acceptedAmbassadorInvite = new JustGage({
+      id: "accepted-ambassador-invite",
+      startAnimationTime: 2500,
+      label: "accepted",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Ambasasador invites",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var acceptedWorkshopInvite = new JustGage({
+      id: "accepted-workshop-invite",
+      startAnimationTime: 2500,
+      label: "accepted",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Workshop invites",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var bookedWorkshop = new JustGage({
+      id: "booked-workshop",
+      startAnimationTime: 2500,
+      label: "booked",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Booked workshop",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var filledOutActivityList = new JustGage({
+      id: "filled-out-activity-list",
+      startAnimationTime: 2500,
+      label: "Filled out",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Filled out activity list",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var finishedTutoring = new JustGage({
+      id: "finished-tutoring",
+      startAnimationTime: 2500,
+      label: "finished",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Finished tutoring",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });
+
+    var finishedActivity = new JustGage({
+      id: "finished-activity",
+      startAnimationTime: 2500,
+      label: "completed",
+      labelFontColor: "#4C4C4C",
+      relativeGaugeSize: true,
+      symbol: "%",
+      value: getRandomInt(0, 100), 
+      min: 0,
+      max: 100,
+      title: "Activities completed",
+      levelColorsGradient: false,
+      counter: true,
+      customSectors: [{
+          color: "#FF0000",
+          lo: 0,
+          hi: 30
+      }, {
+          color: "#FFCC00",
+          lo: 30,
+          hi: 70
+      }, {
+          color: "#009933",
+          lo: 70,
+          hi: 100
+      }]
+    });

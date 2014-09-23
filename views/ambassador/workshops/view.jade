@@ -1,0 +1,40 @@
+block vars
+  - var bodyClass = 'workshops'
+  - var useFooter = false
+
+extend ../../template/default 
+append main
+  Button Add workshop
+  table.list.fixed
+    thead
+      tr
+        th.responsible Date
+        th.goal Responsible
+        th.category Assistant ambassador
+        th.options
+    tbody
+      tr
+        td Ghio Ferroni-Fr
+        td data
+        td Rätt kvalité
+        td.dropdown
+          span
+      tr
+        td Marie Lorentz
+        td data
+        td Rätt kvalité
+        td.dropdown
+          span
+
+append footer
+  .switch-holder
+    span Förhållanden
+    label.label-switch
+      input(type="checkbox")
+      .checkbox
+    span Absoluta värden
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });
