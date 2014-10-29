@@ -8,13 +8,7 @@ input[type="submit"],
   user-select: none
   vertical-align: middle
   white-space: nowrap
-
-.btn-delete
-  background-color: #DB524B
-  &:hover
-    background-color: lighten(#DB524B, 10%)
-
-.btn-save
-  background-color: #58B957
-  &:hover
-    background-color: lighten(#58B957, 10%)
+  &.green
+    @extend %btn-green
+  &.red
+    @extend %btn-red

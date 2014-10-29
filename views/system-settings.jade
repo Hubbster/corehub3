@@ -12,7 +12,8 @@ append main
         p
           .user-tree
             .top
-              button Add user
+              button.green
+                span.icon-plus &nbsp;Add user
               button Import users
               input.search#userTreeSearch(type='text', placeholder='Search user/department')
             .tree-container
@@ -40,8 +41,10 @@ append main
                           li(data-jstree='{"icon":"icon-user"}') Anton Kjörck Lindén
               .data
                 p
-                  button.btn-delete Delete
-                  button Change password
+                  button.red
+                    span.icon-remove &nbsp;Delete
+                  button
+                    span.icon-key2 &nbsp;User password
                 p
                   input#fullName(type='text', placeholder='Full name')
                 p
@@ -54,7 +57,8 @@ append main
                       option(value='ambassador') Ambassador
                       option(value='user') Regular
                 p
-                  button.btn-save Save
+                  button.green
+                    span.icon-checkmark &nbsp;Save
         .user-permissions
           span.headline User permissions (only available for cockpit users)
           table

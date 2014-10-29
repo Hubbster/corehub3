@@ -1,26 +1,49 @@
 block vars
   - var bodyClass = 'dashboard'
+  - var useFooter = true
 
 extend template/default 
+append page-header
+  button Select widgets
 append main
-  .widget-holder
-    .top Aktivering i organisationen
-      button.modal-toggle Filtrera
-    .wrapper
-      .gauge#total-activation
-      .right
-        .gauge#accepted-ambassador-invite
-        .gauge#accepted-workshop-invite
-        .gauge#booked-workshop
-        .gauge#finished-tutoring
-        .gauge#filled-out-activity-list
-        .gauge#finished-activity
+  .widget-row
+    .widget-holder.full
+      .top Aktivering i organisationen
+        button.modal-toggle Filtrera
+      .wrapper
+        .gauge#total-activation
+        .right
+          .gauge#accepted-ambassador-invite
+          .gauge#accepted-workshop-invite
+          .gauge#booked-workshop
+          .gauge#finished-tutoring
+          .gauge#filled-out-activity-list
+          .gauge#finished-activity
     
-  .widget-holder
-    .top Aktiviteter
-    
-  .widget-holder
-    .top Handledning
+  .widget-row
+    .widget-holder.half
+      .top Inspiration/blog (alla)
+      p Inlägg
+      p Inlägg
+      p Inlägg
+    .widget-holder.half
+      .top Mina aktiviteter (alla)
+      p Inlägg
+
+  .widget-row
+    .widget-holder.half
+      .top Mina boosts (alla)
+      p Inlägg
+    .widget-holder.half
+      .top Min grupps aktiviteter (amba)
+      p Inlägg
+
+  .widget-row
+    .widget-holder.half
+      .top Liveflöde (alla)
+      p Inlägg
+    .widget-holder.half
+      .top Aktivitetslogg från cockpiten (cockpit)
 
   .modal#modal-filter-business-area
     .modal-inner
@@ -30,7 +53,7 @@ append main
         .top
           input.search#filterTreeSearch(type='text', placeholder='Search department')
         .tree-container
-          .tree.settings-tree#filterTree
+          .tree#filterTree
             ul
               li(data-jstree='{"icon":"icon-home","opened":true,"selected":true}') Hubbster AB
                 ul
@@ -38,6 +61,8 @@ append main
                   li(data-jstree='{"icon":"icon-office"}') UI/UX team
                   li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
                   li(data-jstree='{"icon":"icon-office"}') UI/UX team
+      .footer
+        button OK
             
 append scripts
   script(src="/public/js/vendor/raphael.2.1.0.min.js")

@@ -13,3 +13,23 @@
   &:hover
     background-color: $hover-button-color
     color: white
+
+  &:disabled
+    cursor: not-allowed
+    opacity: 0.5
+
+%btn-grey
+  background-color: darken($uibasebg, 8%)
+  color: #757575
+  &:hover
+    background-color: darken($uibasebg, 12%)
+
+%btn-red
+  background-color: #DB524B
+  &:hover
+    background-color: lighten(#DB524B, 10%)
+
+%btn-green
+  background-color: #58B957
+  &:hover
+    background-color: lighten(#58B957, 10%)
