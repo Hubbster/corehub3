@@ -1,0 +1,60 @@
+block vars
+  - var bodyClass = 'workshop-list'
+
+extend template/default
+append main
+  .workshop-row
+    a.btn(href="/create-workshop.html") Skapa ny Workshop
+  .workshop-row
+    .headline Kommande workshops
+    table
+      thead
+        tr
+          th Datum
+          th Ansvarig Ambassadör
+          th Assisterande Ambassadör
+      tbody
+        tr
+          td 15 September 2014, 13:30
+          td John Boo
+          td Anders Andersson
+        tr
+          td 15 December 2014, 11:00
+          td John Boo
+          td Anders Andersson
+  .workshop-row
+    .headline Genomförda workshops
+    table
+      thead
+        tr
+          th Datum
+          th Ansvarig Ambassadör
+          th Assisterande Ambassadör
+          th
+      tbody
+        tr
+          td 15 September 2014, 13:30
+          td John Boo
+          td Anders Andersson
+          td
+            a.btn(href="/create-activitylist.html") Fyll aktivitetslista
+        tr
+          td 15 December 2014, 11:00
+          td John Boo
+          td Anders Andersson
+          td
+            a.btn(href="/create-activitylist.html") Fyll aktivitetslista
+
+
+append footer
+  .switch-holder
+    span Förhållanden
+    label.label-switch
+      input(type="checkbox")
+      .checkbox
+    span Absoluta värden
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });

@@ -1,9 +1,15 @@
 #total-activation
-  +span(11 of 24)
+  +span(full)
+
+  +breakpoint($medium-screen)
+    +span(11 of 24)
 
 .right
-  +span(13 of 24 last)
+  +span(full)
   padding-top: 2em
+
+  +breakpoint($medium-screen)
+    +span(13 of 24 last)
 
 #accepted-ambassador-invite,
 #accepted-workshop-invite,
@@ -11,8 +17,11 @@
 #filled-out-activity-list,
 #finished-tutoring,
 #finished-activity
-  width: 33.333334%
+  width: 50%
   float: left
+
+  +breakpoint($large-screen)
+    width: 33.333334%
 
 .wrapper
   +clearfix
@@ -44,8 +53,59 @@
       top: 0.5em
 
   &.half
-    +gallery(6 of 12)
+    +span(full)
+
+    +breakpoint($medium-screen)
+      +gallery(6 of 12)
+
   &.full
     +span(full)
 
+.widget-content
+  padding: 20px
+
+.widget-content-row
+  +clearfix
+  +span(full)
+  margin-bottom: 5px
+
+.widget-picture
+  +span(2 of 12)
+  overflow: hidden
+  border-radius: 999px
+
+.widget-excerpt
+  +span(10 last of 12)
+
+  a
+    text-decoration: underline
+
 #modal-filter-business-area
+
+.boost-list, .livefeed-list
+  list-style-type: none
+  padding: 0
+
+  li
+    padding-left: 32px
+    margin-bottom: 8px
+    background-size: 18px 18px
+    background-position: center left
+    background-repeat: no-repeat
+
+.boost-list
+  li
+    background-image: url(/public/icons/boost.svg)
+
+.livefeed-list
+  .activity-completed
+    background-image: url(/public/icons/activity.svg)
+
+  .new-user
+    background-image: url(/public/icons/new-user.svg)
+
+  .goal-completed
+    background-image: url(/public/icons/goal-completed.svg)
+
+  .details
+    color: lighten($base-font-color, 30)

@@ -48,7 +48,7 @@ Chart.defaults.Doughnut = {
   animateScale : false, 
   animationEasing: 'easeOutQuart',
   legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
-}
+};
 
 // var ctx = $("#cs_doughnut_chart").get(0).getContext("2d");
 // var myDoughnut = new Chart(ctx).Doughnut(data);
@@ -67,7 +67,7 @@ $(document).ready(function () {
   $('.tabs').on('click', '.tab-header-and-content > a', function(event) {
     if (!$(this).hasClass('is-active')) {
       event.preventDefault();
-      var tabs = $(this).closest('.tabs')
+      var tabs = $(this).closest('.tabs');
       tabs.find('.is-open').removeClass('is-open').hide();
 
       $(this).next().toggleClass('is-open').toggle();
@@ -83,7 +83,7 @@ $(document).ready(function () {
   $('.accordion').on('click', '.accordion-header-and-content > a', function(event) {
     if (!$(this).hasClass('is-active')) {
       event.preventDefault();
-      var accordion = $(this).closest('.accordion')
+      var accordion = $(this).closest('.accordion');
       accordion.find('.is-open').removeClass('is-open').hide();
 
       $(this).next().toggleClass('is-open').toggle();
@@ -109,4 +109,12 @@ $( "#close" ).click(function() {
 
 $( ".modal-toggle" ).click(function() {
   $( ".modal" ).toggleClass( "visible" );
+});
+
+// Expander
+
+$('.expander-trigger').bind('click', function(e){
+  jQuery(this).parent().find('.expander-content').toggleClass('content-expanded'); 
+  jQuery(this).parent().toggleClass('is-expanded');
+  e.preventDefault();
 });

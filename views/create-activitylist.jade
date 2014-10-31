@@ -1,0 +1,53 @@
+block vars
+  - var bodyClass = 'create-activitylist'
+
+extend template/default
+append main
+  .activity-list-row
+    .headline Aktiviteter
+    table.create-activity
+      thead
+        tr
+          th.goal Mål
+          th.description Beskrivning
+          th Kategori
+          th Aktiviteten med 1 ord
+          th Kategori
+          th Deadline
+      tbody
+        tr
+          td
+            textarea(type='text', placeholder='Mål')
+          td
+            textarea(type='text', placeholder='Beskrivning')
+          td
+            input(type='text', placeholder='Kategori')
+          td 
+            input(type='text', placeholder='Aktiviteten med 1 ord')
+          td
+            input(type='text', placeholder='Kategori')
+          td
+            input(type='text', placeholder='Deadline')
+        tr
+          td
+          td
+          td
+            button + Ny aktivitet
+          td
+          td
+          td
+  .activity-list-row
+    button.green.save-btn Spara aktiviteter
+
+append footer
+  .switch-holder
+    span Förhållanden
+    label.label-switch
+      input(type="checkbox")
+      .checkbox
+    span Absoluta värden
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });

@@ -1,0 +1,78 @@
+block vars
+  - var bodyClass = 'dialog'
+
+extend template/default
+append main
+  .workshop-row
+    span.headline Välj mottagare
+    .select-user-tree
+      .top
+        input.search#selectUserTreeSearch(type='text', placeholder='Search user/department')
+      .tree-container
+        .tree#selectUserTree
+          ul
+            li.jstree-open(data-jstree='{"icon":"icon-home"}') Hubbster AB
+              ul
+                li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  ul
+                    li(data-jstree='{"icon":"icon-star3"}') Niklas Engström
+                    li(data-jstree='{"type":"user"}') Ambassadör
+                    li(data-jstree='{"icon":"icon-user"}') Pelle Karlsson
+                    li(data-jstree='{"icon":"icon-user"}') Styina Larsson
+                li(data-jstree='{"icon":"icon-office"}') UI/UX team
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Anton Kjörck Lindén
+                li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Niklas Engström
+                    li(data-jstree='{"icon":"icon-user"}') Anna Karling
+                    li(data-jstree='{"icon":"icon-user"}') Niklas Engström
+                    li(data-jstree='{"icon":"icon-user"}') Anna Karling
+                li(data-jstree='{"icon":"icon-office"}') UI/UX team
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Anton Kjörck Lindén
+  .workshop-row
+    label(for="subject") Ämne
+      input.subject(name="subject" type="text")
+    label(for="message") Meddelande
+      textarea.message(name="message")
+    .create-workshop-button-group
+      button Spara utkast
+      button.green Skicka meddelande
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.3/jstree.min.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });
+  script.
+    $(function () {
+        $('#selectUserTree').jstree({
+            "plugins": ["wholerow", "checkbox", "search", "sort", "dnd"],
+            "core" : {
+              "check_callback" : true,
+              "themes" : {
+                "variant" : "large",
+                "stripes" : true
+              }
+            },
+            "types" : {
+              "ambassador" : {
+                "icon" : "icon-user4"
+              },
+              "user" : {
+                "icon" : "icon-user"
+              }
+            }
+        });
+        var to = false;
+        $('#selectUserTreeSearch').keyup(function () {
+            if (to) {
+                clearTimeout(to);
+            }
+            to = setTimeout(function () {
+                var v = $('#selectUserTreeSearch').val();
+                $('#selectUserTree').jstree(true).search(v);
+            }, 250);
+        });
+    });

@@ -1,0 +1,82 @@
+block vars
+  - var bodyClass = 'all-activity-list'
+
+extend template/default
+append main
+  .activity-list-row
+    .active-activity-header.expander-trigger
+      .active
+      h1 Aktiva aktiviteter
+    .expander-content
+      table.activity-list.fixed#activity-list
+        thead
+          tr
+            th.responsible Ansvarig
+            th.goal Mål
+            th.description Beskrivning
+            th.category Kategori
+            th.options
+        tbody
+          tr
+            td Ghio Ferroni-Fr
+            td.has-overflow
+              div ordning och reda, jobba smartare inte hantera varor om och om igen...
+            td.has-overflow
+              div Bettina: ordna lagerplat "efter-kampanjen" för att få struktur på bulk som ev blir kvar efter sök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan sa te: presenterar EMV p ex sidan samt EMV i all te: presenterar EMV p ex sidan samt EMV i all
+            td Rätt kvalité
+            td.dropdown
+              span
+          tr
+            td Marie Lorentz
+            td.has-overflow
+              div Arbeta in vårt EMV, bättre brutto samt trevlig happening på Apoteket - nåt händer!
+            td.has-overflow 
+              div Besök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan samt EMV i allmänhet, lägger Apotekets tidning i deras väntrum, påminner om direkta kommuikationskanaler till Apoteket (hemliga tlnr, fax, email osv...) hör vad vi kan avlasta med, anpassa lager efter doktorerna preferens/behov efter specialiteter/specialistvård osv informera regelbundet om restnoterade preparat och föreslå alternativ mm
+            td Rätt kvalité
+            td.dropdown
+              span
+  .activity-list-row
+    .completed-activity-header.expander-trigger
+      .completed
+      h1 Avklarade aktiviteter
+     .expander-content
+      table.activity-list.fixed#activity-list
+        thead
+          tr
+            th.responsible Ansvarig
+            th.goal Mål
+            th.description Beskrivning
+            th.category Kategori
+            th.options
+        tbody
+          tr
+            td Ghio Ferroni-Fr
+            td.has-overflow
+              div ordning och reda, jobba smartare inte hantera varor om och om igen...
+            td.has-overflow
+              div Bettina: ordna lagerplat "efter-kampanjen" för att få struktur på bulk som ev blir kvar efter sök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan sa te: presenterar EMV p ex sidan samt EMV i all te: presenterar EMV p ex sidan samt EMV i all
+            td Rätt kvalité
+            td.dropdown
+              span
+          tr
+            td Marie Lorentz
+            td.has-overflow
+              div Arbeta in vårt EMV, bättre brutto samt trevlig happening på Apoteket - nåt händer!
+            td.has-overflow 
+              div Besök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan samt EMV i allmänhet, lägger Apotekets tidning i deras väntrum, påminner om direkta kommuikationskanaler till Apoteket (hemliga tlnr, fax, email osv...) hör vad vi kan avlasta med, anpassa lager efter doktorerna preferens/behov efter specialiteter/specialistvård osv informera regelbundet om restnoterade preparat och föreslå alternativ mm
+            td Rätt kvalité
+            td.dropdown
+              span
+
+append footer
+  .switch-holder
+    span Förhållanden
+    label.label-switch
+      input(type="checkbox")
+      .checkbox
+    span Absoluta värden
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });

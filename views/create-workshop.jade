@@ -1,0 +1,99 @@
+block vars
+  - var bodyClass = 'create-workshop'
+
+extend template/default
+append main
+  .workshop-row
+    label.pick-date(for="pick_date") Välj datum
+      input#pick_date(name="pick_date" type="text" placeholder="Klicka och välj datum")
+    label.pick-time(for="pick_time") Välj tid
+      input#pick_time(name="pick_time" type="text" placeholder="Klicka och välj tid")
+  .workshop-row
+    span.headline Lägg till användare
+    .select-user-tree
+      .top
+        input.search#selectUserTreeSearch(type='text', placeholder='Search user/department')
+      .tree-container
+        .tree#selectUserTree
+          ul
+            li.jstree-open(data-jstree='{"icon":"icon-home"}') Hubbster AB
+              ul
+                li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  ul
+                    li(data-jstree='{"icon":"icon-star3"}') Niklas Engström
+                    li(data-jstree='{"type":"user"}') Ambassadör
+                    li(data-jstree='{"icon":"icon-user"}') Pelle Karlsson
+                    li(data-jstree='{"icon":"icon-user"}') Styina Larsson
+                li(data-jstree='{"icon":"icon-office"}') UI/UX team
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Anton Kjörck Lindén
+                li(data-jstree='{"icon":"icon-office"}') Affärsutveckling
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Niklas Engström
+                    li(data-jstree='{"icon":"icon-user"}') Anna Karling
+                    li(data-jstree='{"icon":"icon-user"}') Niklas Engström
+                    li(data-jstree='{"icon":"icon-user"}') Anna Karling
+                li(data-jstree='{"icon":"icon-office"}') UI/UX team
+                  ul
+                    li(data-jstree='{"icon":"icon-user"}') Anton Kjörck Lindén
+  .workshop-row
+    label(for="subject") Ämne
+      input.subject(name="subject" type="text")
+    label(for="message") Meddelande
+      textarea.message(name="message")
+    .create-workshop-button-group
+      button Spara utkast
+      button.green Skicka inbjudan
+
+append footer
+  .switch-holder
+    span Förhållanden
+    label.label-switch
+      input(type="checkbox")
+      .checkbox
+    span Absoluta värden
+
+append scripts
+  script(src="/public/js/vendor/jquery.dynatable.js")
+  script(src="/public/js/vendor/zebra_datepicker.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.3/jstree.min.js")
+  //- script
+  //-   $('#activity-list').dynatable({ features: { paginate: false, search: false, recordCount: false, perPageSelect: false } });
+  script.
+    $('#pick_date').Zebra_DatePicker({ 
+      show_icon: false,
+      direction: 1,
+      months: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'],
+      days: ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
+    });
+  script.
+    $(function () {
+        $('#selectUserTree').jstree({
+            "plugins": ["wholerow", "checkbox", "search", "sort", "dnd"],
+            "core" : {
+              "check_callback" : true,
+              "themes" : {
+                "variant" : "large",
+                "stripes" : true
+              }
+            },
+            "types" : {
+              "ambassador" : {
+                "icon" : "icon-user4"
+              },
+              "user" : {
+                "icon" : "icon-user"
+              }
+            }
+        });
+        var to = false;
+        $('#selectUserTreeSearch').keyup(function () {
+            if (to) {
+                clearTimeout(to);
+            }
+            to = setTimeout(function () {
+                var v = $('#selectUserTreeSearch').val();
+                $('#selectUserTree').jstree(true).search(v);
+            }, 250);
+        });
+    });

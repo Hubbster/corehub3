@@ -23,27 +23,93 @@ append main
   .widget-row
     .widget-holder.half
       .top Inspiration/blog (alla)
-      p Inlägg
-      p Inlägg
-      p Inlägg
+      .widget-content
+        .widget-content-row
+          .widget-picture
+            img(src="http://placehold.it/350x350")
+          .widget-excerpt
+            p These override some of the styles specified in themand partials in Bitters. You can replace the typography variables and the header font specifications in Bitters with these styles. 
+              a(href="/blog.html") Läs mer...
+        .widget-content-row
+          .widget-picture
+            img(src="http://placehold.it/350x350")
+          .widget-excerpt
+            p These override some of the styles specified in themand partials in Bitters. You can replace the typography variables and the header font specifications in Bitters with these styles. 
+              a(href="/blog.html") Läs mer...
     .widget-holder.half
       .top Mina aktiviteter (alla)
-      p Inlägg
-
+      .widget-content.activity-list
+        table.activity-list.fixed#activity-list
+          thead
+            tr
+              th.goal Mål
+              th.description Beskrivning
+              th Deadline
+          tbody
+            tr
+              td.has-overflow
+                div ordning och reda, jobba smartare inte hantera varor om och om igen...
+              td.has-overflow
+                div Bettina: ordna lagerplat "efter-kampanjen" för att få struktur på bulk som ev blir kvar efter sök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan sa te: presenterar EMV p ex sidan samt EMV i all te: presenterar EMV p ex sidan samt EMV i all
+              td 09/10
+            tr
+              td.has-overflow
+                div Arbeta in vårt EMV, bättre brutto samt trevlig happening på Apoteket - nåt händer!
+              td.has-overflow 
+                div Besök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan samt EMV i allmänhet, lägger Apotekets tidning i deras väntrum, påminner om direkta kommuikationskanaler till Apoteket (hemliga tlnr, fax, email osv...) hör vad vi kan avlasta med, anpassa lager efter doktorerna preferens/behov efter specialiteter/specialistvård osv informera regelbundet om restnoterade preparat och föreslå alternativ mm
+              td 09/10
   .widget-row
     .widget-holder.half
       .top Mina boosts (alla)
-      p Inlägg
+      .widget-content
+        ul.boost-list
+          li Bjud den strandsatta ryska u-båtsgeneralen på lunch.
+          li Hälsa på alla kollegor.
+          li Rita en kanin på morgonmötet. 
     .widget-holder.half
       .top Min grupps aktiviteter (amba)
-      p Inlägg
+      .widget-content.activity-list
+        table.activity-list.fixed#activity-list
+          thead
+            tr
+              th.goal Mål
+              th.description Beskrivning
+              th Deadline
+          tbody
+            tr
+              td.has-overflow
+                div ordning och reda, jobba smartare inte hantera varor om och om igen...
+              td.has-overflow
+                div Bettina: ordna lagerplat "efter-kampanjen" för att få struktur på bulk som ev blir kvar efter sök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan sa te: presenterar EMV p ex sidan samt EMV i all te: presenterar EMV p ex sidan samt EMV i all
+              td 09/10
+            tr
+              td.has-overflow
+                div Arbeta in vårt EMV, bättre brutto samt trevlig happening på Apoteket - nåt händer!
+              td.has-overflow 
+                div Besök av prof smarbetspartners(vård inrättning och mottagningari närhete: presenterar EMV p ex sidan samt EMV i allmänhet, lägger Apotekets tidning i deras väntrum, påminner om direkta kommuikationskanaler till Apoteket (hemliga tlnr, fax, email osv...) hör vad vi kan avlasta med, anpassa lager efter doktorerna preferens/behov efter specialiteter/specialistvård osv informera regelbundet om restnoterade preparat och föreslå alternativ mm
+              td 09/10
 
   .widget-row
     .widget-holder.half
       .top Liveflöde (alla)
-      p Inlägg
+      .widget-content
+        ul.livefeed-list
+          li.activity-completed Aktivitet 'Diskutera kundbemöttande' avklarad 
+            span.details - Karin Andersson, 14:32
+          li.new-user Ny användare 'Barack Obama' tillagd 
+            span.details - Jack Svensson, 13:21
+          li.goal-completed Mål 'Förstå innebörden av affärsmässiga relationer' avklarad 
+            span.details - Venithan Nilsson, 11:59
     .widget-holder.half
       .top Aktivitetslogg från cockpiten (cockpit)
+      .widget-content
+        ul.livefeed-list
+          li.activity-completed Cockpit-aktivitet avklarad
+            span.details - Anders Palmer, 12:45
+          li.new-user Användare i cockpiten tillagd 
+            span.details - Göran Reinfeldt, 11:11
+          li.goal-completed Cockpit-relaterat mål avklarad 
+            span.details - Fredrik Persson, 11:09
 
   .modal#modal-filter-business-area
     .modal-inner

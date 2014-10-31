@@ -1,4 +1,4 @@
-.activity-list
+.activity-list, .my-activity-list, .all-activity-list
   table
     td
       text-overflow: ellipsis
@@ -70,3 +70,25 @@
         _filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff')
         margin-left: auto
         margin-right: auto
+
+.activity-list-row
+  margin-bottom: 4em
+
+.active-activity-header, .completed-activity-header
+  padding-bottom: 0.5em
+  border-bottom: 1px solid #DDD
+
+  h1
+    font-size: 1.25em
+
+  .active, .completed
+    float: left
+    margin-right: 0.5em
+    height: 24px
+    width: 24px
+
+  .active
+    background-color: yellow
+
+  .completed
+    background-color: #5CB85C
