@@ -3,3 +3,5 @@
 views/test.jade
 public/sass/.sass-cache/*
 public/css/application.css
+*css
+config.codekit
