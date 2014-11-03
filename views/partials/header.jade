@@ -5,19 +5,19 @@ header.primary
   nav.mainmenu
     ul.primary
       li
-        a.active(href="#") Översikt
+        a#overview.active(href="#") Översikt
       li
-        a(href="#") Mina uppdrag
+        a#missions(href="#") Mina uppdrag
           span.badge 14
       li
-        a(href="#") Vår strategi
+        a#strategy(href="#") Vår strategi
       li
-        a(href="#") Inspiration
+        a#inspiration(href="#") Inspiration
       li
-        a(href="#") Ambassadörer
+        a#ambassadors(href="#") Ambassadörer
       li
-        a(href="#") Cockpit
-  nav.slideout
+        a#cockpit(href="#") Cockpit
+  nav.slideout#overview-slideout
     ul
       li.header Inspiration
       li
@@ -30,6 +30,41 @@ header.primary
         a(href="#") Vår framtid
       li
         a(href="#") Livet efter resan
+  nav.slideout#missions-slideout
+    ul
+      li.header Menyval 1
+      li
+        a(href="#") Menyval 2
+      li
+        a(href="#") Menyval 3
+  nav.slideout#strategy-slideout
+    ul
+      li.header Strategi-menyval 1
+      li
+        a(href="#") Strategi-menyval 2
+      li
+        a(href="#") Strategi-menyval 3
+  nav.slideout#inspiration-slideout
+    ul
+      li.header Inspiration-menyval 1
+      li
+        a(href="#") Inspiration-menyval 2
+      li
+        a(href="#") Inspiration-menyval 3
+  nav.slideout#ambassador-slideout
+    ul
+      li.header Ambassadör-menyval 1
+      li
+        a(href="#") Ambassadör-menyval 2
+      li
+        a(href="#") Ambassadör-menyval 3
+  nav.slideout#cockpit-slideout
+    ul
+      li.header Cockpit-menyval 1
+      li
+        a(href="#") Cockpit-menyval 2
+      li
+        a(href="#") Cockpit-menyval 3
   .account
     a.btn(href='/system-settings.html') Inställningar
     a.btn.sign-out(href='/system-settings.html') Logga ut

@@ -1,7 +1,33 @@
 // Toggle nav
 
-$( ".mainmenu a" ).click(function() {
+$( "#overview" ).click(function() {
   $( "body" ).toggleClass( "popout-nav" );
+  $( "#overview-slideout" ).toggleClass( "slideout-active" );
+});
+
+$( "#missions" ).click(function() {
+  $( "body" ).toggleClass( "popout-nav" );
+  $( "#missions-slideout" ).toggleClass( "slideout-active" );
+});
+
+$( "#strategy" ).click(function() {
+  $( "body" ).toggleClass( "popout-nav" );
+  $( "#strategy-slideout" ).toggleClass( "slideout-active" );
+});
+
+$( "#inspiration" ).click(function() {
+  $( "body" ).toggleClass( "popout-nav" );
+  $( "#inspiration-slideout" ).toggleClass( "slideout-active" );
+});
+
+$( "#ambassadors" ).click(function() {
+  $( "body" ).toggleClass( "popout-nav" );
+  $( "#ambassador-slideout" ).toggleClass( "slideout-active" );
+});
+
+$( "#cockpit" ).click(function() {
+  $( "body" ).toggleClass( "popout-nav" );
+  $( "#cockpit-slideout" ).toggleClass( "slideout-active" );
 });
 
 $( ".mainmenu li" ).click(function() {
